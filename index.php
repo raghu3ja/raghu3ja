@@ -33,25 +33,20 @@
         <!-- Banner Section -->
         <div class="col-md-12 mob-sec">
             <div class="owl-carousel owl-theme" id="owl-h">
-
-                <?php
-					$image=$conn->query("select * from banner");
-					if($image->num_rows>0)
-					{
-
-						while($image_rows= $image->fetch_assoc())
-						{
-						    ?>
-				<div class="item">
-					<img style="height:40%" src="admin/img/banner/<?php echo $image_rows['bn_img']; ?>" alt="search store">
-				</div>
-				<?php    
-						    }
-
-
-						}
-
-				?>
+<?php
+  $image=$conn->query("select * from banner");
+    if($image->num_rows>0)
+       {
+          while($image_rows= $image->fetch_assoc())
+       {
+?>
+          <div class="item">
+            <img style="height:40%" src="admin/img/banner/<?php echo $image_rows['bn_img']; ?>" alt="search store">
+          </div>
+<?php    
+       }
+       }
+?>
 
             </div>
         </div>
